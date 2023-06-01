@@ -27,3 +27,52 @@ Create Kafka topics: Create two Kafka topics named network-traffic and processed
 Generate network traffic data: Implement a Python script using the kafka-python package to generate network traffic data. Publish the data to the network-traffic Kafka topic using the Kafka producer API.
 Ingest and process data using Structured Spark Streaming: Implement a Spark Streaming application to consume data from the network-traffic Kafka topic. Apply real-time analytics (e.g., filtering, aggregation, sliding window operations) to identify patterns and anomalies in the data. Publish the processed data to the processed-data Kafka topic.
 Visualize data using Grafana: Set up Grafana and connect it to the processed-data Kafka topic. Create interactive dashboards and visualizations to display real-time insights into the network traffic. Use graphs, charts, and alerts to highlight traffic trends, identify issues, and provide actionable insights to the network operation team.
+
+    
+Sample Code
+# Sample code to generate network traffic data and publish it to Kafka topic
+
+from kafka import KafkaProducer
+import json
+import time
+
+# Kafka configuration
+bootstrap_servers = '<bootstrap_servers>'
+topic = 'network-traffic'
+
+# Create Kafka producer
+producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
+
+# Generate network traffic data
+def generate_network_traffic():
+    transaction_id = str(int(time.time()))
+    sender_phone_number = "256777192516"
+    receiver_phone_number = "256772961935"
+    transaction_amount = 100000
+    transaction_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+
+    data = {
+        "transaction_id": transaction_id,
+        "sender_phone_number": sender_phone_number,
+        "receiver_phone_number": receiver_phone_number,
+        "transaction_amount": transaction_amount,
+        "transaction_time": transaction_time
+    }
+
+    return data
+
+# Publish network traffic data to Kafka topic
+def publish_data(data):
+    producer.send(topic, json.dumps(data).encode('utf-8'))
+    producer.flush()
+
+# Generate and publish network traffic data every second
+while True:
+    data = generate_network_traffic()
+    publish_data(data)
+    time.sleep(1)
+    
+    
+    
+Conclusion
+The proposed real-time network traffic analysis system provides the telecommunications company with the ability to monitor and analyze network traffic data in real-time. By leveraging Apache Kafka, Structured Spark Streaming, and a web-based dashboard, the system enables the identification of anomalies, patterns, and insights to support network operation and decision-making processes. With continuous data ingestion, processing, and visualization, the telecommunications company can proactively address issues, optimize network performance, and improve overall operational efficiency.
