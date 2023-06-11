@@ -1,4 +1,4 @@
-# Week-10-Introduction-to-Spark-Streaming
+# Week 10 Introduction to Spark Streaming
 
 # Real-Time Network Traffic Analysis for Telecommunications
 This project aims to develop a real-time network traffic analysis system for a telecommunications company. The system will monitor network traffic data, identify anomalies or patterns, and provide real-time insights to the network operation team. The project will utilize Apache Kafka for data ingestion and messaging, Structured Spark Streaming for real-time analytics, and a web-based dashboard for data visualization.
