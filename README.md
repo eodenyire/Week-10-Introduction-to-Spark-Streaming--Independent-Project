@@ -29,3 +29,6 @@ The proposed solution involves the following steps:
     
 # Conclusion
 <p> The proposed real-time network traffic analysis system provides the telecommunications company with the ability to monitor and analyze network traffic data in real-time. By leveraging Apache Kafka, Structured Spark Streaming, and a web-based dashboard, the system enables the identification of anomalies, patterns, and insights to support network operation and decision-making processes. With continuous data ingestion, processing, and visualization, the telecommunications company can proactively address issues, optimize network performance, and improve overall operational efficiency.
+    
+    
+The Google Colab with the sample code to generate network traffic data and publish it to the firts Kafka topic, network-traffic: https://colab.research.google.com/drive/1g9h6yOhl2hu9K2ruNpATWypjTpS7sBdk?usp=sharing
