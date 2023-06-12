@@ -32,3 +32,5 @@ The proposed solution involves the following steps:
     
     
 The Google Colab with the sample code to generate network traffic data and publish it to the firts Kafka topic, network-traffic: https://colab.research.google.com/drive/1g9h6yOhl2hu9K2ruNpATWypjTpS7sBdk?usp=sharing
+    
+Google Colab with the Python code which tries different things from reading from a kafka topic, to windows transfromations and publishing the processed data back to the kafka topic: https://colab.research.google.com/drive/1W9Y6d02NV-OiwPwhK8Y3Ys97inT3cqNg?usp=sharing
